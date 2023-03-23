@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta property="og:title" content="TEXTure: Text-Guided Texturing of 3D Shapes"/>
+    <meta property="og:url" content="https://texturepaper.github.io/TEXTurePaper/"/>
+    <meta property="og:image" content="static/figures/teaser.jpg"/>
+    <meta property="og:image:width" content="2603"/>
+    <meta property="og:image:height" content="680"/>
+
+
+    <title>Set-the-Scene: Global-Local Training for Generating Controllable NeRF Scenes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+    <link rel="icon" href="static/figures/orangutan.png">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="publication-header">
+    <div class="hero-body">
+        <div class="container is-max-widescreen">
+            <!-- <div class="columns is-centered"> -->
+            <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">Set-the-Scene: Global-Local Training for Generating
+                    Controllable NeRF Scenes</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="publication-author-block">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">Dana Cohen-Bar,</span>
+                        <span class="author-block">Elad Richardson,</span>
+                        <span class="author-block">Gal Metzer,</span>
+                        <span class="author-block">Raja Giryes,</span>
+                        <span class="author-block">Daniel Cohen-Or</span>
+                    </div>
+
+                    <div class="is-size-4 publication-authors">
+                        <span class="author-block">Tel Aviv University</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+              
+              <span class="link-block">
+                <a href="static/paper.pdf" target="_blank"
+                   class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="fas fa-book-reader"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+                            <!-- Colab Link. -->
+                            <span class="link-block">
+                <a href="https://github.com/TEXTurePaper/TEXTurePaper" target="_blank"
+                   class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+              </span>
+                            <!--span class="link-block">
+                             <a href=""  target="_blank"
+                                class="external-link button is-normal is-rounded">
+                               <span class="icon">
+                                   <i class="fas fa-infinity"></i>
+                               </span>
+                               <span>Colab</span>
+                             </a>
+                            </span -->
+
+                            <span class="link-block">
+              <a href="https://huggingface.co/spaces/TEXTurePaper/TEXTure" target="_blank"
+                 class="external-link button is-normal is-rounded">
+                <span class="icon">
+                    <i class="fas fa-laptop"></i>
+                </span>
+                <span>Demo</span>
+              </a>
+             </span>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <video id="teaser" autoplay muted loop playsinline height="130%">
+                <source src="static/figures_and_videos/teaser_video.mp4"
+                        type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+                Set-the-Scene takes as input a text and a scene layout and synthesizes a composable NeRF scene,
+                utilizing a Global-Local approach.
+            </h2>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="hero is-small"> -->
+<!-- <div class="hero-body"> -->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body"> -->
+<!-- <div id="results-carousel" class="carousel results-carousel"> -->
+<!-- <div class="container">
+<div class="item">
+<div class="column is-centered has-text-centered">
+  <img src="static/figures/teaser.jpg" alt="TEXTure"/>
+
+<h2 class="subtitle">
+  TEXTure takes an input mesh and a conditioning text prompt and paints the mesh with high-quality textures, using an iterative diffusion-based process.
+</h2> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!--  </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!--  </div> -->
+<!-- </section> -->
+
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <!-- div class="item">
+                  <p style="margin-bottom: 30px">
+                <video poster="" id="tree" autoplay controls muted loop height="100%">
+                  <source src="static/figures/video.mp4"
+                  type="video/mp4">
+                </video>
+                </p>
+                </div -->
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Recent breakthroughs in text-guided image generation have led to remarkable progress in the
+                        field of 3D synthesis from text. By optimizing neural radiance fields (NeRF) directly from text,
+                        recent methods are able to produce remarkable results.
+                        Yet, these methods are limited in their control of each object's placement or appearance, as
+                        they represent the scene as a whole.
+                        This can be a major issue in scenarios that require refining or manipulating objects in the
+                        scene.
+                        To remedy this deficit, we propose a novel Global-Local training framework for synthesizing a 3D
+                        scene using object proxies. A proxy represents the object's placement in the generated scene and
+                        optionally defines its coarse geometry.
+                        The key to our approach is to represent each object as an independent NeRF. We alternate between
+                        optimizing each NeRF on its own and as part of the full scene. Thus, a complete representation
+                        of each object can be learned, while also creating a harmonious scene with style and lighting
+                        match.
+                        We show that using proxies allows a wide variety of editing options, such as adjusting the
+                        placement of each independent object, removing objects from a scene, or refining an object.
+                        Our results show that Set-the-Scene offers a powerful solution for scene synthesis and
+                        manipulation, filling a crucial gap in controllable text-to-3D synthesis.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+    </div>
+</section>
+
+
+<section class="section hero">
+    <div class="container is-max-desktop">
+        <h2 class="title is-4">Results</h2>
+
+        <div class="columns is-centered">
+
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/living_rooms/proxy.png" alt="living room proxy"
+                             width="800px"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/living_rooms/baroque.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A Baroque living room
+                    </h4>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/living_rooms/futuristic.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A futuristic living room
+                    </h4>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/living_rooms/moroccan.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A Moroccan living room
+                    </h4>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="columns is-centered">
+
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/bedrooms/proxy.png" alt="bedroom proxy" width="800px"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/bedrooms/futuristic.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A futuristic bedroom
+                    </h4>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%" loop reverse>
+                        <source src="static/figures_and_videos/bedrooms/asian.mp4"
+                                type="video/mp4">
+                        /mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        An Asian bedroom
+                    </h4>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%" loop reverse>
+                        <source src="static/figures_and_videos/bedrooms/kids.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        An kids bedroom
+                    </h4>
+                </div>
+            </div>
+            <!--/ Visual Effects. -->
+
+        </div>
+
+        <div class="columns is-centered">
+
+                <div class="column">
+                    <div class="content">
+                        <div class="column is-centered has-text-centered">
+                            <img src="static/figures_and_videos/dining/proxy.png" alt="dining proxy" width="800px"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Effects. -->
+                <div class="column">
+                    <div class="content">
+                        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/figures_and_videos/dining/futuristic.mp4"
+                                    type="video/mp4">
+                        </video>
+                        <h4 class="subtitle has-text-centered">
+                            A Futuristic dining room
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="content">
+                        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/figures_and_videos/dining/baroque.mp4"
+                                    type="video/mp4">
+                        </video>
+                        <h4 class="subtitle has-text-centered">
+                            A Baroque dining room
+                        </h4>
+                    </div>
+                </div>
+
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/dining/moroccan.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A Moroccan dining room
+                    </h4>
+                </div>
+            </div>
+            <!--/ Visual Effects. -->
+
+            </div>
+
+        <h2 class="title is-4">Post training editing</h2>
+
+
+
+<section class="section hero">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">How does it work?</h2>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <div class="content">
+                <div class="column is-centered has-text-centered">
+                    <img src="static/figures_and_videos/pipeline.png" alt="Pipeline" width="1000px"/>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <h4 class="subtitle has-text-justified">
+                The scene is represented as composition of multiple object NeRFs, each
+                has a given position and possibly as shape defined by the scene proxies. The models are jointly opti-
+                mized to “locally” represent the required object and “globally” to be part of the larger scene. Both the
+                local and the
+                global optimization propagate gradients into the same mod-
+                els, creating a harmonious scene composed of disentangled
+                objects which can be edited independently.
+            </h4>
+        </div>
+
+
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="columns is-centered">
+        <div class="column is-8">
+            <div class="content">
+                <p>
+                    This website is licensed under a <a rel="license"
+                                                        href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+
+                <p>
+                    Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If
+                    you want to reuse their <a
+                        href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them
+                    appropriately.
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
+
+
+<!-- Default Statcounter code for TEXTure
+https://texturepaper.github.io/TEXTurePaper/ -->
+<script type="text/javascript">
+    var sc_project = 12845175;
+    var sc_invisible = 1;
+    var sc_security = "c50db5bf";
+</script>
+<script type="text/javascript"
+        src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript>
+    <div class="statcounter"><a title="Web Analytics"
+                                href="https://statcounter.com/" target="_blank"><img class="statcounter"
+                                                                                     src="https://c.statcounter.com/12845175/0/c50db5bf/1/"
+                                                                                     alt="Web Analytics"
+                                                                                     referrerPolicy="no-referrer-when-downgrade"></a>
+    </div>
+</noscript>
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
