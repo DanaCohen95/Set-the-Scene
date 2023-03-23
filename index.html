@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
 
-    <meta property="og:title" content="TEXTure: Text-Guided Texturing of 3D Shapes"/>
-    <meta property="og:url" content="https://texturepaper.github.io/TEXTurePaper/"/>
+    <meta property="og:title" content="Set-the-Scene: Global-Local Training for Generating Controllable NeRF Scenes"/>
+    <meta property="og:url" content="https://danacohen95.github.io/Set-the-Scene/"/>
     <meta property="og:image" content="static/figures/teaser.jpg"/>
     <meta property="og:image:width" content="2603"/>
     <meta property="og:image:height" content="680"/>
@@ -76,36 +76,26 @@
                 </a>
               </span>
 
+                            <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
                             <!-- Colab Link. -->
                             <span class="link-block">
-                <a href="https://github.com/TEXTurePaper/TEXTurePaper" target="_blank"
+                <a href="https://github.com/DanaCohen95/Set-the-Scene" target="_blank"
                    class="external-link button is-normal is-rounded">
                 <span class="icon">
                   <i class="fab fa-github"></i>
                 </span>
-                <span>Code</span>
+                <span>Code (coming soon!)</span>
               </a>
               </span>
-                            <!--span class="link-block">
-                             <a href=""  target="_blank"
-                                class="external-link button is-normal is-rounded">
-                               <span class="icon">
-                                   <i class="fas fa-infinity"></i>
-                               </span>
-                               <span>Colab</span>
-                             </a>
-                            </span -->
-
-                            <span class="link-block">
-              <a href="https://huggingface.co/spaces/TEXTurePaper/TEXTure" target="_blank"
-                 class="external-link button is-normal is-rounded">
-                <span class="icon">
-                    <i class="fas fa-laptop"></i>
-                </span>
-                <span>Demo</span>
-              </a>
-             </span>
-
                         </div>
                     </div>
 
@@ -130,28 +120,6 @@
     </div>
 </section>
 
-<!-- <section class="hero is-small"> -->
-<!-- <div class="hero-body"> -->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body"> -->
-<!-- <div id="results-carousel" class="carousel results-carousel"> -->
-<!-- <div class="container">
-<div class="item">
-<div class="column is-centered has-text-centered">
-  <img src="static/figures/teaser.jpg" alt="TEXTure"/>
-
-<h2 class="subtitle">
-  TEXTure takes an input mesh and a conditioning text prompt and paints the mesh with high-quality textures, using an iterative diffusion-based process.
-</h2> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </div> -->
-<!--  </div> -->
-<!-- </div> -->
-<!-- </div> -->
-<!--  </div> -->
-<!-- </section> -->
 
 <section class="section hero is-light">
     <div class="container is-max-desktop">
@@ -295,7 +263,7 @@
                                 type="video/mp4">
                     </video>
                     <h4 class="subtitle has-text-centered">
-                        An kids bedroom
+                        A kids bedroom
                     </h4>
                 </div>
             </div>
@@ -305,38 +273,38 @@
 
         <div class="columns is-centered">
 
-                <div class="column">
-                    <div class="content">
-                        <div class="column is-centered has-text-centered">
-                            <img src="static/figures_and_videos/dining/proxy.png" alt="dining proxy" width="800px"/>
-                        </div>
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/dining/proxy.png" alt="dining proxy" width="800px"/>
                     </div>
                 </div>
+            </div>
 
-                <!-- Visual Effects. -->
-                <div class="column">
-                    <div class="content">
-                        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                            <source src="static/figures_and_videos/dining/futuristic.mp4"
-                                    type="video/mp4">
-                        </video>
-                        <h4 class="subtitle has-text-centered">
-                            A Futuristic dining room
-                        </h4>
-                    </div>
+            <!-- Visual Effects. -->
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/dining/futuristic.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A Futuristic dining room
+                    </h4>
                 </div>
+            </div>
 
-                <div class="column">
-                    <div class="content">
-                        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                            <source src="static/figures_and_videos/dining/baroque.mp4"
-                                    type="video/mp4">
-                        </video>
-                        <h4 class="subtitle has-text-centered">
-                            A Baroque dining room
-                        </h4>
-                    </div>
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/dining/baroque.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A Baroque dining room
+                    </h4>
                 </div>
+            </div>
 
 
             <div class="column">
@@ -352,89 +320,326 @@
             </div>
             <!--/ Visual Effects. -->
 
-            </div>
-
-        <h2 class="title is-4">Post training editing</h2>
-
-
-
-<section class="section hero">
-    <div class="container is-max-desktop">
-        <!-- Abstract. -->
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">How does it work?</h2>
-            </div>
         </div>
 
+        <h2 class="title is-4">Post Training Editing</h2>
+        <div class="columns is-centered ">
 
-        <div class="column">
-            <div class="content">
-                <div class="column is-centered has-text-centered">
-                    <img src="static/figures_and_videos/pipeline.png" alt="Pipeline" width="1000px"/>
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/editing_garage/garage_proxy_before.png" alt="dining proxy" width="800px"/>
+                    </div>
                 </div>
             </div>
-        </div>
 
-
-        <div class="column">
-            <h4 class="subtitle has-text-justified">
-                The scene is represented as composition of multiple object NeRFs, each
-                has a given position and possibly as shape defined by the scene proxies. The models are jointly opti-
-                mized to “locally” represent the required object and “globally” to be part of the larger scene. Both the
-                local and the
-                global optimization propagate gradients into the same mod-
-                els, creating a harmonious scene composed of disentangled
-                objects which can be edited independently.
-            </h4>
-        </div>
-
-
-    </div>
-</section>
-
-
-<footer class="footer">
-    <div class="columns is-centered">
-        <div class="column is-8">
-            <div class="content">
-                <p>
-                    This website is licensed under a <a rel="license"
-                                                        href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                    Commons Attribution-ShareAlike 4.0 International License</a>.
-                </p>
-
-                <p>
-                    Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If
-                    you want to reuse their <a
-                        href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them
-                    appropriately.
-                </p>
+            <!-- Visual Effects. -->
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/editing_garage/before.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        Original generated scene
+                    </h4>
+                </div>
             </div>
+
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/editing_garage/garage_proxy_after.png" alt="dining proxy" width="800px"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/editing_garage/after.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        Placement editing
+                    </h4>
+                </div>
+            </div>
+            <!--/ Visual Effects. -->
+
         </div>
-    </div>
-    </div>
-</footer>
+
+        <div class="columns is-centered">
+
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/editing_dining/dining_proxy_before.png" alt="dining proxy" width="800px"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Effects. -->
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/editing_dining/dining_orig.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        Original generated scene
+                    </h4>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/editing_dining/dining_proxy_after.png" alt="dining proxy" width="800px"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/editing_dining/dining_after.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        Placement editing
+                    </h4>
+                </div>
+            </div>
+            <!--/ Visual Effects. -->
+
+        </div>
 
 
-<!-- Default Statcounter code for TEXTure
-https://texturepaper.github.io/TEXTurePaper/ -->
-<script type="text/javascript">
-    var sc_project = 12845175;
-    var sc_invisible = 1;
-    var sc_security = "c50db5bf";
-</script>
-<script type="text/javascript"
-        src="https://www.statcounter.com/counter/counter.js" async></script>
-<noscript>
-    <div class="statcounter"><a title="Web Analytics"
-                                href="https://statcounter.com/" target="_blank"><img class="statcounter"
-                                                                                     src="https://c.statcounter.com/12845175/0/c50db5bf/1/"
-                                                                                     alt="Web Analytics"
-                                                                                     referrerPolicy="no-referrer-when-downgrade"></a>
+        <h2 class="title is-4">Post Training Editing</h2>
+        <div class="columns is-centered">
+
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/editing_garage/garage_proxy_before.png" alt="dining proxy" width="800px"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Effects. -->
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/editing_garage/before.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        Original generated scene
+                    </h4>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/editing_garage/garage_proxy_after.png" alt="dining proxy" width="800px"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/editing_garage/after.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        Placement editing
+                    </h4>
+                </div>
+            </div>
+            <!--/ Visual Effects. -->
+
+        </div>
+
+        <div class="columns is-centered">
+
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/editing_dining/dining_proxy_before.png" alt="dining proxy" width="800px"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Effects. -->
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/editing_dining/dining_orig.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        Original generated scene
+                    </h4>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures_and_videos/editing_dining/dining_proxy_after.png" alt="dining proxy" width="800px"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/editing_dining/dining_after.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        Placement editing
+                    </h4>
+                </div>
+            </div>
+            <!--/ Visual Effects. -->
+
+        </div>
+
+        <h3 class="title is-4">Single Object NeRFs Composing The Scene</h3>
+        <div class="columns is-centered">
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/baroque_badrooms/room.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A Baroque bedroom
+                    </h4>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/baroque_badrooms/bed.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A Baroque bed
+                    </h4>
+                </div>
+            </div>
+            <!-- Visual Effects. -->
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/baroque_badrooms/nightstand.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A Baroque nightstand
+                    </h4>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="static/figures_and_videos/baroque_badrooms/wardrobe.mp4"
+                                type="video/mp4">
+                    </video>
+                    <h4 class="subtitle has-text-centered">
+                        A Baroque wardrobe
+                    </h4>
+                </div>
+            </div>
+
+            <!--/ Visual Effects. -->
+
+        </div>
+
+
+
+        <section class="section hero">
+            <div class="container is-max-desktop">
+                <!-- Abstract. -->
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">How does it work?</h2>
+                    </div>
+                </div>
+
+
+                <div class="column">
+                    <div class="content">
+                        <div class="column is-centered has-text-centered">
+                            <img src="static/figures_and_videos/pipeline.png" alt="Pipeline" width="1000px"/>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="column">
+                    <h4 class="subtitle has-text-justified">
+                        The scene is represented as composition of multiple object NeRFs, each
+                        has a given position and possibly a shape defined by the scene proxies. The models are jointly
+                        optimized to “locally” represent the required object and “globally” be part of the larger
+                        scene.
+                        Both the local and the global optimization propagate gradients into the same models, creating a
+                        harmonious scene composed of disentangled objects which can be edited independently.
+                    </h4>
+                </div>
+
+
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This website is licensed under a <a rel="license"
+                                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                            Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+
+                        <p>
+                            Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project
+                            page. If
+                            you want to reuse their <a
+                                href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them
+                            appropriately.
+                        </p>
+                    </div>
+                </div>
+            </div>
     </div>
-</noscript>
-<!-- End of Statcounter Code -->
+    </footer>
+
+
+    <!-- Default Statcounter code -->
+    <script type="text/javascript">
+        var sc_project = 12845175;
+        var sc_invisible = 1;
+        var sc_security = "c50db5bf";
+    </script>
+    <script type="text/javascript"
+            src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter"><a title="Web Analytics"
+                                    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+                                                                                         src="https://c.statcounter.com/12845175/0/c50db5bf/1/"
+                                                                                         alt="Web Analytics"
+                                                                                         referrerPolicy="no-referrer-when-downgrade"></a>
+        </div>
+    </noscript>
+    <!-- End of Statcounter Code -->
 
 </body>
 </html>
