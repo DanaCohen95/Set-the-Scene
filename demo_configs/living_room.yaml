@@ -1,0 +1,18 @@
+log:
+  exp_name: 'baroque_living_room'
+  eval_only: False
+guide:
+  text: 'a futuristic living room with a sofa set'
+scene_proxies:
+  proxy_to_nerf_ids: [ 'sofa_for_one', 'sofa_for_three', 'table', 'room' ]
+  proxy_centers: [ [ 0.3, -0.02, -0.2 ], [ -0.35, -0.05, -0.3 ], [ -0.35, -0.15, 0.25 ], [ -0.5, 0.68, 0.45 ] ]
+  proxy_rotations_clockwise: [ 90, 0, 0, 0 ]
+scene_nerfs:
+  nerf_ids: [ 'sofa_for_one', 'sofa_for_three', 'table', 'room' ]
+  shape_scales: [ 0.36, 0.48, 0.28, 2.25 ]
+  shape_paths: [ 'scenes/living_room/sofa_for_one.obj', 'scenes/living_room/sofa_for_three.obj', 'scenes/living_room/table.obj', 'scenes/living_room/room.obj' ]
+  nerf_texts: [ 'a futuristic armchair', "a futuristic sofa" , 'a futuristic living room table', 'walls of a futuristic room with windows and paintings' ]
+optim:
+  iters: 15000
+  device: 'cuda:0'
+

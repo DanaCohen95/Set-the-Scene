@@ -1,0 +1,20 @@
+log:
+  exp_name: 'baroque_dining_room'
+  eval_only: False
+guide:
+  text: 'a baroque dining room'
+scene_proxies:
+  proxy_to_nerf_ids: [ 'chair', 'chair', 'chair', 'chair', 'table', 'room' ]
+  proxy_centers: [ [ -0.08, -0.1, -0.4 ], [ -0.32, -0.1, -0.4 ], [ 0.08, -0.1, 0.13 ], [ 0.32, -0.1, 0.13 ], [ 0.2, -0.08, 0.25 ], [ -0.5, 0.68, 0.45 ] ]
+  proxy_rotations_clockwise: [ 270, 270, 90, 90, 90, 0 ]
+  proxy_scales: [ 1, 1, 1, 1, 1, 1 ]
+scene_nerfs:
+  nerf_ids: [ 'chair', 'table', 'room' ]
+  shape_scales: [ 0.3,  0.35, 2.25 ]
+  shape_paths: [ 'scenes/dining/chair1.obj',  'scenes/dining/table.obj', 'scenes/dining/room.obj' ]
+  nerf_texts: [ 'a baroque chair',"a baroque table","walls of a Baroque room with windows, paintings on the walls" ]
+optim:
+  iters: 15000
+  device: 'cuda:0'
+
+

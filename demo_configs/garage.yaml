@@ -1,0 +1,19 @@
+log:
+  exp_name: 'garage'
+  eval_only: False
+guide:
+  text: 'a mechanics workshop, daylight'
+scene_proxies:
+  proxy_to_nerf_ids: [ 'car', 'fuel_barrel', 'fuel_barrel', 'chest', 'room' ]
+  proxy_centers: [ [ -0.0, -0.11, 0.14 ], [ 0.5, -0.15, 0.35 ], [ 0.5, -0.15, 0.1 ], [ 0.55, -0.01, -0.36 ], [ 0.5, 0.68, 0.45 ] ]
+  proxy_rotations_clockwise: [ 0, 0, 0, 0, 0 ]
+scene_nerfs:
+  nerf_ids: [ 'car', 'fuel_barrel',  'chest', 'room' ]
+  shape_scales: [ 0.53, 0.15, 0.25, 2.25 ]
+  shape_paths: [ 'scenes/garage/car.obj', 'scenes/garage/fuel_barrel1.obj', 'scenes/garage/chest.obj', 'scenes/garage/room.obj' ]
+  #shape_paths: ['shapes/garage/nascar.obj', 'shapes/garage/fuel_barrel.obj', 'shapes/garage/cabin.obj', 'shapes/room.obj']
+  nerf_texts: [ 'a car', 'a fuel_barrel', 'a tool chest',    'walls of a mechanics workshop  with windows, daylight' ]
+optim:
+  iters: 15000
+  device: 'cuda:0'
+  resume: True
