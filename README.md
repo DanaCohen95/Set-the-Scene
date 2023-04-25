@@ -24,7 +24,10 @@ Official Implementation for "Set-the-Scene: Global-Local Training for Generating
 
 1. Use the relevant yaml config file in the `demo_configs` folder, and possibly change the nerf_texts parameters to
    match the desired prompts.
-2. Run `python -m train.py --config demo_configs/scene_name.yaml`
+2. Run
+```bash
+ python -m scripts.train_scene_nerf --config_path demo_configs/scene_name.yaml
+```
 3. The results will be saved in the `results` folder.
 4. In order to edit the scene post-training, edit proxies parameters in the config yaml and change the parameter
    `log.eval_only: True`.
