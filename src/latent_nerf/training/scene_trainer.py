@@ -12,6 +12,7 @@ from loguru import logger
 from torch.optim import Optimizer
 from torch.utils.data import DataLoader
 from tqdm import tqdm
+import shutil
 
 from src import utils
 from src.adan_optimizer import Adan
@@ -457,7 +458,7 @@ class SceneTrainer():
         if len(self.past_checkpoints) > self.cfg.log.max_keep_ckpts:
             old_ckpt = self.past_checkpoints.pop(0)
             if old_ckpt.exists():
-                old_ckpt.unlink()
+                shutil.rmtree(old_ckpt)
 
         torch.save(state, cur_ckpt_dir / 'train_params.pth')
 
