@@ -36,8 +36,8 @@ Official Implementation for "Set-the-Scene: Global-Local Training for Generating
 
 1. Build a scene using Blender or other 3D software, name each object in the scene and save the entire scene as an obj
    file.
-2. In the script  `scripts/obj_scene_to_config.py` update rotation_clockwise_dict with the orientation of each object in
-   the scene (how much the object is rotated from its from view, in degress)
+2. In the script  `scripts/obj_scene_to_config.py` update 'rotation_clockwise_dict' with the orientation of each object in
+   the scene (the degree of rotation from the object's front view)
 3. Run  `scripts/obj_scene_to_config.py` script. The obj file for each object will be saved on the scene directory and
    the config parameters will be printed to the console.
 4. Copy the printed config parameters to the config file.
